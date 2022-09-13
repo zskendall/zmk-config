@@ -60,9 +60,9 @@
             //                         └──────┴──────┴──────┘          └──────┴──────┴──────┘
             bindings = <
                 &kp TAB      &kp Q  &kp W  &kp E  &kp R  &kp T            &kp Y  &kp U  &kp I    &kp O   &kp P    &kp BKSP
-                &hm LCTL ESC &kp A  &kp S  &kp D  &kp F  &kp G            &kp H  &kp J  &kp K    &kp L   &kp SCLN &hm RCTL QUOT
+                &hm LALT ESC &kp A  &kp S  &kp D  &kp F  &kp G            &kp H  &kp J  &kp K    &kp L   &kp SCLN &hm RALT QUOT
                 &qworf       &kp Z  &kp X  &kp C  &kp V  &kp B            &kp N  &kp M  &kp CMMA &kp DOT &kp FSLH &kp MINUS
-                           &mt LSFT LPRN &nt LALT SPC &lt NUM LBKT    &lt NAV RBKT &nt LGUI RET &mt RSFT RPRN
+                           &mt LSFT LPRN &nt LCTL SPC &lt NUM LBKT    &lt NAV RBKT &nt LGUI RET &mt RSFT RPRN
             >;
         };
 
@@ -80,9 +80,9 @@
             //                         └──────┴──────┴──────┘          └──────┴──────┴──────┘
             bindings = <
                 &kp TAB      &kp Q  &kp W  &kp O  &kp R  &kp F            &kp Y  &kp U  &kp L    &kp V   &kp X    &kp BKSP
-                &hm LCTL ESC &kp A  &kp S  &kp H  &kp T  &kp G            &kp P  &kp N  &kp E    &kp I   &kp SCLN &hm RCTL QUOT
+                &hm LALT ESC &kp A  &kp S  &kp H  &kp T  &kp G            &kp P  &kp N  &kp E    &kp I   &kp SCLN &hm RALT QUOT
                 &qworf       &kp Z  &kp J  &kp D  &kp C  &kp B            &kp K  &kp M  &kp CMMA &kp DOT &kp FSLH &kp MINUS
-                           &mt LSFT LPRN &nt LALT SPC &lt NUM LBKT    &lt NAV RBKT &nt LGUI RET &mt RSFT RPRN
+                           &mt LSFT LPRN &nt LCTL SPC &lt NUM LBKT    &lt NAV RBKT &nt LGUI RET &mt RSFT RPRN
             >;
         };
  
@@ -116,7 +116,7 @@
             //                         └──────┴──────┴──────┘          └──────┴──────┴──────┘
             bindings = <
                 &trans  &none     &none     &none     &none    &none      &none     &none     &none     &none     &none  &trans
-                &trans  &kp HOME  &kp PGUP  &kp PGDN  &kp END  &none      &kp LARW  &kp DARW  &kp UARW  &kp RARW  &none  &none
+                &trans  &kp HOME  &kp PGUP  &kp PGDN  &kp END  &none      &kp LARW  &kp DARW  &kp UARW  &kp RARW  &none  &kp RALT
                 &trans  &none     &none     &none     &none    &none      &none     &none     &none     &none     &none  &tog OPS
                                              &trans  &trans  &tog ART   &trans  &trans  &trans
             >;
@@ -132,7 +132,7 @@
             // └──────┴──────┴──────┴──┬───┴──┬───┴──┬───┴──┐          ┌───┴──┬───┴──┬───┴──┬───┴──────┴──────┴──────┘
             //                         |//////|//////|//////|          |//////|//////|//////|
             //                         └──────┴──────┴──────┘          └──────┴──────┴──────┘
-            // BT 0 = persoal, BT 4 = work
+            // BT 0 = personal, BT 2-4 = work
             bindings = <
                 &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &kp F1  &kp F2  &kp F6  &none       &none       &trans
                 &reset       &none         &none         &none         &none         &none          &none   &none   &none   &none       &cp M_VOLU  &bt BT_NXT
@@ -158,7 +158,7 @@
                 &tog ART  &kp N  &kp W  &kp E  &kp O  &kp T       &none  &none  &none  &none  &none  &trans
                 &trans    &kp A  &kp S  &kp D  &kp J  &kp G       &none  &none  &none  &none  &none  &trans
                 &kp LSFT  &kp Z  &kp X  &kp C  &kp V  &kp B       &none  &none  &none  &none  &none  &tog ART
-                               &trans  &trans  &mt LCTL INS       &trans  &trans  &trans
+                               &trans  &trans  &mt LALT INS       &trans  &trans  &trans
             >;
         };
     };
