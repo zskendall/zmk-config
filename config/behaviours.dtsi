@@ -1,0 +1,64 @@
+// ZMK behaviours config
+
+#define TAP_TERM 200
+
+/* ==================== MOD TAPS ==================== */
+
+#define ZMK_HOLD_TAP(name, ...) \
+    / { \
+        behaviors { \
+            name: name { \
+                compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; \
+                __VA_ARGS__ \
+            }; \
+        }; \
+    };
+
+ZMK_HOLD_TAP(pm, bindings = <&kp>, <&kp>; flavor = "tap-preferred";
+             tapping-term-ms = <TAP_TERM>; quick-tap-ms = <0>;)
+ZMK_HOLD_TAP(nt, bindings = <&kp>, <&kp>; flavor = "balanced";
+             tapping-term-ms = <TAP_TERM>; quick-tap-ms = <150>;)
+
+/* ==================== TAP DANCES ==================== */
+
+#define ZMK_TAP_DANCE(name, ...) \
+    / { \
+        behaviors { \
+            name: name { \
+                compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; \
+                __VA_ARGS__ \
+            }; \
+        }; \
+    };
+#define ART_DANCE(name, ...) \
+  ZMK_TAP_DANCE(name, tapping-term-ms = <TAP_TERM>; __VA_ARGS__)
+#define MOD_ART_DANCE(name, DANCE, ...) \
+  ZMK_HOLD_TAP(name, bindings = <&kp>, <DANCE>; flavor = "tap-preferred"; \
+               tapping-term-ms = <TAP_TERM>; quick-tap-ms = <TAP_TERM>; \
+               retro-tap; __VA_ARGS__)
+
+ZMK_TAP_DANCE(td_reset, bindings = <&sys_reset>, <&bootloader>;
+              tapping-term-ms = <TAP_TERM>;)
+ART_DANCE(td_tabsp, bindings = <&kp TAB>, <&kp BKSP>;)
+ART_DANCE(td_qp, bindings = <&kp Q>, <&kp P>;)
+ART_DANCE(td_wo, bindings = <&kp W>, <&kp O>;)
+ART_DANCE(td_ei, bindings = <&kp E>, <&kp I>;)
+ART_DANCE(td_ru, bindings = <&kp R>, <&kp U>;)
+ART_DANCE(td_ty, bindings = <&kp T>, <&kp Y>;)
+ART_DANCE(td_esc_quot, bindings = <&kp ESC>, <&kp QUOT>;)
+MOD_ART_DANCE(am_esquot, &td_esc_quot)
+ART_DANCE(td_ascln, bindings = <&kp A>, <&kp SCLN>;)
+ART_DANCE(td_sl, bindings = <&kp S>, <&kp L>;)
+ART_DANCE(td_dk, bindings = <&kp D>, <&kp K>;)
+ART_DANCE(td_fj, bindings = <&kp F>, <&kp J>;)
+ART_DANCE(td_gh, bindings = <&kp G>, <&kp H>;)
+ART_DANCE(td_hyundexit, bindings = <&kp MINUS>, <&kp UNDER>, <&none>, <&none>, <&tog ART>;)
+ART_DANCE(td_zslsh, bindings = <&kp Z>, <&kp FSLH>;)
+ART_DANCE(td_xdot, bindings = <&kp X>, <&kp DOT>;)
+ART_DANCE(td_ccomm, bindings = <&kp C>, <&kp CMMA>;)
+ART_DANCE(td_vm, bindings = <&kp V>, <&kp M>;)
+ART_DANCE(td_bn, bindings = <&kp B>, <&kp N>;)
+ART_DANCE(td_spc_ret, bindings = <&kp SPC>, <&kp RET>;)
+MOD_ART_DANCE(am_spc_ret, &td_spc_ret)
+ART_DANCE(td_rbkt_ins, bindings = <&kp RBKT>, <&kp INS>;)
+MOD_ART_DANCE(am_rbkt_ins, &td_rbkt_ins)
